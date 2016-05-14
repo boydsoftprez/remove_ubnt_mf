@@ -18,10 +18,10 @@ if [ -e "$FILE" ] ; then
     sed -ir '/mcad/ c ' /etc/inittab
     sed -ir '/mcuser/ c ' /etc/passwd
     sed -ir '/mother/ c ' /etc/passwd
-    #Change HTTP port for 81 | Need access http://IP:81
+    #Change HTTP port for 8080 | Need access http://IP:8080
     cat /tmp/system.cfg | grep -v http >> /tmp/system2.cfg
     echo "httpd.https.status=disabled" >> /tmp/system2.cfg
-    echo "httpd.port=81" >> /tmp/system2.cfg
+    echo "httpd.port=8080" >> /tmp/system2.cfg
     echo "httpd.session.timeout=900" >> /tmp/system2.cfg
     echo "httpd.status=enabled" >> /tmp/system2.cfg
     cat /tmp/system2.cfg >> /tmp/system.cfg
